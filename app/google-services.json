@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "177746059782",
+    "firebase_url": "https://facile-yield-analyzer.firebaseio.com",
+    "project_id": "facile-yield-analyzer",
+    "storage_bucket": "facile-yield-analyzer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177746059782:android:aef4eb0e6541460abd5987",
+        "android_client_info": {
+          "package_name": "com.koders.facileyieldanalyzer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177746059782-vs7iakj9o7os4sg159fpchh7ss4pbo13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWchyWAxIHt_qrafnU8po83RJ4t7qYCD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177746059782-vs7iakj9o7os4sg159fpchh7ss4pbo13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
