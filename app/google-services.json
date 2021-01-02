@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "177746059782",
-    "firebase_url": "https://facile-yield-analyzer.firebaseio.com",
-    "project_id": "facile-yield-analyzer",
-    "storage_bucket": "facile-yield-analyzer.appspot.com"
+    "project_number": "108360064684",
+    "firebase_url": "https://soil-analysis-883ae.firebaseio.com",
+    "project_id": "soil-analysis-883ae",
+    "storage_bucket": "soil-analysis-883ae.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:177746059782:android:aef4eb0e6541460abd5987",
+        "mobilesdk_app_id": "1:108360064684:android:e843110827870bbe508909",
         "android_client_info": {
           "package_name": "com.koders.facileyieldanalyzer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "177746059782-vs7iakj9o7os4sg159fpchh7ss4pbo13.apps.googleusercontent.com",
+          "client_id": "108360064684-3m2j0g3h1fg1fical3fgvfnlq8tio95n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDWchyWAxIHt_qrafnU8po83RJ4t7qYCD4"
+          "current_key": "AIzaSyBP3oiq4Dd8_9ZDz0UV2IeN03hZCTfXVaw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "177746059782-vs7iakj9o7os4sg159fpchh7ss4pbo13.apps.googleusercontent.com",
+              "client_id": "108360064684-3m2j0g3h1fg1fical3fgvfnlq8tio95n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
