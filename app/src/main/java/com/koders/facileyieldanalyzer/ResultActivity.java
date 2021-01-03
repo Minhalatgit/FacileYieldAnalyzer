@@ -22,6 +22,7 @@ public class ResultActivity extends AppCompatActivity {
 
     ActivityResultBinding binding;
     DatabaseReference databaseReference;
+    double potassium, moisture, nitrogen, phosphorus, pH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,11 @@ public class ResultActivity extends AppCompatActivity {
                 binding.phosphorus.setText(String.valueOf(firebaseModel.P));
                 binding.moisture.setText(String.valueOf(firebaseModel.Moisture));
                 binding.ph.setText(String.valueOf(firebaseModel.PH));
+
+                moisture = Double.parseDouble(firebaseModel.Moisture);
+                pH = Double.parseDouble(firebaseModel.PH);
+
+                binding.recommendedCrop.setText(predictCrop(moisture, pH));
             }
 
             @Override
@@ -68,5 +74,23 @@ public class ResultActivity extends AppCompatActivity {
         };
         binding.progress.setVisibility(View.VISIBLE);
         databaseReference.addValueEventListener(valueEventListener);
+    }
+
+    private String predictCrop(double moisture, double pH) {
+        if (moisture == 30 && (pH >= 6.0 && pH <= 6.5)) {
+            //sugar cane
+            return "Sugar cane recommended";
+        } else if ((moisture >= 65 && moisture <= 75) && (pH >= 6.0 && pH <= 6.8)) {
+            //tomato
+            return "Tomato recommended";
+        } else if ((moisture >= 20 && moisture <= 22) && (pH >= 5 && pH <= 8)) {
+            //rice
+            return "Rice crop recommended";
+        } else if ((moisture >= 80 && moisture <= 90) && (pH >= 5.3 && pH <= 6.0)) {
+            //potato
+            return "Potato crop recommended";
+        } else {
+            return "No crop recommended";
+        }
     }
 }

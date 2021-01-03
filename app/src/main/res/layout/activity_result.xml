@@ -32,9 +32,15 @@
                 android:padding="20dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nitrogen" />
+
+                <TextView
                     android:id="@+id/nitrogen"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/text"
                     android:gravity="center_vertical"
                     android:text="3.5 - 4 %"
@@ -44,10 +50,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/potassium"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:text="Potassium" />
+
+                <TextView
+                    android:id="@+id/potassium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/text"
                     android:gravity="center_vertical"
                     android:text="3+%"
@@ -57,10 +69,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/phosphorus"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:text="Phosphorus" />
+
+                <TextView
+                    android:id="@+id/phosphorus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/text"
                     android:gravity="center_vertical"
                     android:text="0.8 - 1 %"
@@ -70,10 +88,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/moisture"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:text="Moisture" />
+
+                <TextView
+                    android:id="@+id/moisture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/text"
                     android:gravity="center_vertical"
                     android:text="50 - 70 %"
@@ -83,10 +107,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/ph"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:text="pH" />
+
+                <TextView
+                    android:id="@+id/ph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/text"
                     android:gravity="center_vertical"
                     android:text="6.2 - 6.5"
@@ -96,10 +126,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/recommendedCrop"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:text="Recommended Crop" />
+
+                <TextView
+                    android:id="@+id/recommendedCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/text"
                     android:gravity="center_vertical"
                     android:text="Tomato is recommended crop"
