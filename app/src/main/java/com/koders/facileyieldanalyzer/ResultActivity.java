@@ -73,7 +73,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         };
         binding.progress.setVisibility(View.VISIBLE);
-        databaseReference.addValueEventListener(valueEventListener);
+        databaseReference.addListenerForSingleValueEvent(valueEventListener);
     }
 
     private String predictCrop(double moisture, double pH) {
