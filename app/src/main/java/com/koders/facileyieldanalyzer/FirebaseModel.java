@@ -4,7 +4,7 @@ public class FirebaseModel {
 
     public double K;
     public String Moisture;
-    public int N;
-    public int P;
-    public int PH;
+    public double N;
+    public double P;
+    public String PH;
 }

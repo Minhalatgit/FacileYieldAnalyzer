@@ -47,12 +47,18 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
+
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                FirebaseModel firebaseModel = (FirebaseModel) snapshot.getValue();
+                binding.progress.setVisibility(View.GONE);
+                FirebaseModel firebaseModel = snapshot.getValue(FirebaseModel.class);
 
+                binding.nitrogen.setText(String.valueOf(firebaseModel.N));
                 binding.potassium.setText(String.valueOf(firebaseModel.K));
+                binding.phosphorus.setText(String.valueOf(firebaseModel.P));
+                binding.moisture.setText(String.valueOf(firebaseModel.Moisture));
+                binding.ph.setText(String.valueOf(firebaseModel.PH));
             }
 
             @Override
@@ -60,6 +66,7 @@ public class ResultActivity extends AppCompatActivity {
                 Toast.makeText(ResultActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         };
+        binding.progress.setVisibility(View.VISIBLE);
         databaseReference.addValueEventListener(valueEventListener);
     }
 }
