@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:visibility="gone"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="100dp"
@@ -101,11 +94,11 @@
             android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginStart="10dp"
             android:text="Forgot password?"
             android:textColor="@color/text"
-            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <Button
@@ -120,5 +113,13 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/loading"
+        android:visibility="gone" />
 
 </RelativeLayout>

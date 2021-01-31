@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="5dp"
+    android:background="@drawable/history_bg"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/moistureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moisture: "
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/moisture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@+id/moistureLabel"
+        android:text="0"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/pHLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/moistureLabel"
+        android:text="pH: "
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/moistureLabel"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@+id/pHLabel"
+        android:text="0"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="10.1.21" />
+</RelativeLayout>

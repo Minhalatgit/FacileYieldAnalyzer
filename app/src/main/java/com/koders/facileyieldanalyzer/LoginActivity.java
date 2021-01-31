@@ -3,13 +3,15 @@ package com.koders.facileyieldanalyzer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView forgotPassword;
     boolean isLogin = true;
     FirebaseAuth auth;
-    ProgressBar progressBar;
+    ImageView progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.emailText);
         forgotPassword = findViewById(R.id.forgotPassword);
         auth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progress);
+        progress = findViewById(R.id.progress);
 
         showLogin();
 
@@ -74,13 +76,14 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hideKeyboard();
                 if (isLogin) {
                     if (!TextUtils.isEmpty(email.getText().toString().trim()) & !TextUtils.isEmpty(password.getText().toString().trim())) {
-                        progressBar.setVisibility(View.VISIBLE);
+                        progress.setVisibility(View.VISIBLE);
                         auth.signInWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
+                                progress.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
@@ -98,12 +101,12 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     if (!TextUtils.isEmpty(email.getText().toString().trim()) & !TextUtils.isEmpty(password.getText().toString().trim())
                             & !TextUtils.isEmpty(username.getText().toString().trim()) & !TextUtils.isEmpty(name.getText().toString().trim())) {
-                        progressBar.setVisibility(View.VISIBLE);
+                        progress.setVisibility(View.VISIBLE);
 
                         auth.createUserWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
+                                progress.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(LoginActivity.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
@@ -118,6 +121,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Fields must not be empty", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ForgetPasswordActivity.class));
             }
         });
     }
@@ -144,5 +154,13 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.setVisibility(View.GONE);
 
         isLogin = false;
+    }
+
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }

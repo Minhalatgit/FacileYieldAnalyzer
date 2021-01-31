@@ -23,12 +23,14 @@ public class ResultActivity extends AppCompatActivity {
     ActivityResultBinding binding;
     DatabaseReference databaseReference;
     double potassium, moisture, nitrogen, phosphorus, pH;
+    CropDatabase cropDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_result);
         databaseReference = FirebaseDatabase.getInstance().getReference("home/");
+        cropDatabase = CropDatabase.getInstance(this);
 
         binding.exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +56,7 @@ public class ResultActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 binding.progress.setVisibility(View.GONE);
                 FirebaseModel firebaseModel = snapshot.getValue(FirebaseModel.class);
+                cropDatabase.firebaseDao().insertCropData(firebaseModel);
 
                 binding.nitrogen.setText(String.valueOf(firebaseModel.N));
                 binding.potassium.setText(String.valueOf(firebaseModel.K));
