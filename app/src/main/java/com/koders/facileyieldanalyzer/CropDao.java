@@ -15,6 +15,6 @@ public interface CropDao {
     @Query("DELETE FROM crop_table")
     void deleteAll();
 
-    @Query("SELECT * FROM crop_table")
+    @Query("SELECT * FROM crop_table ORDER BY id DESC")
     List<FirebaseModel> getAllCrops();
 }
